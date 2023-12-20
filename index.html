@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Easy Ment</title>
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <!-- welcome page -->
+    <div id="welcome">
+      <h1>Welcome to Easy Ment</h1>
+      <button id="welcomeBtn" class="btn">GET STARTED</button>
+    </div>
+    <!-- profile page -->
+    <div id="profile">
+      <div class="profile-container">
+        <h1>Profile</h1>
+        <form id="profileForm">
+          <label for="name">Name:</label><br />
+          <input type="text" id="name" name="name" value="Anonymous" /><br />
+          <label for="age">Age:</label><br />
+          <input type="number" id="age" name="age" /><br />
+          <label for="sex">Sex:</label><br />
+          <select id="sex" name="sex">
+            <option value="male">Male</option>
+            <option value="female">Female</option>
+            <option value="other">Other</option></select
+          ><br />
+          <label for="country">Country:</label><br />
+          <input type="text" id="country" name="country" /><br />
+          <input class="btn" type="submit" value="SAVE" />
+        </form>
+      </div>
+    </div>
+    <!-- hamilton intro page -->
+    <div id="hamiltonInfo"></div>
+    <!-- hamilton question section -->
+    <div id="questions">
+      <div class="question-container">
+        <h2 id="questionDynamic"></h2>
+        <form id="questionForm"></form>
+        <div id="arrows">
+          <img src="assets/arrow.jpg" alt="" id="arrow" />
+          <img src="assets/leftarrow.jpg" alt="" id="leftarrow" />
+        </div>
+      </div>
+    </div>
+    <!-- score section -->
+    <div id="scorepage">
+      <p id="result">RESULT</p>
+      <p id="score"></p>
+      <p id="message"></p>
+    </div>
+    <script src="js/data_modal.js"></script>
+    <script src="js/app.js"></script>
+  </body>
+</html>

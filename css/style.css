@@ -1,0 +1,210 @@
+* {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+}
+
+body {
+  width: 100vw;
+  height: 100vh;
+  color: white;
+  background-image: linear-gradient(to top, #30cfd0 0%, #330867 100%);
+}
+
+/* welcome page design */
+
+#welcome,
+#hamiltonInfo {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  justify-content: center;
+  align-items: center;
+}
+
+/* profile design */
+
+#profile {
+  display: none;
+  animation: fadeInAnimation ease 2s;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
+}
+
+@keyframes fadeInAnimation {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.profile-container {
+  width: 80%;
+  margin: auto;
+  /* background-image: linear-gradient(to top, #00c6fb 0%, #005bea 100%); */
+  padding: 20px;
+  /* box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.1); */
+  /* transform: translateY(5%); */
+}
+
+.profile-container h1,
+h4 {
+  text-align: center;
+  /* color: #333; */
+  color: white;
+}
+
+.profile-container form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.profile-container label {
+  margin-top: 20px;
+  font-size: 1.2em;
+  /* color: #333; */
+  color: white;
+}
+input {
+  color: #333;
+}
+
+.profile-container input[type='text'],
+.profile-container input[type='number'],
+.profile-container select {
+  width: 100%;
+  padding: 10px;
+  margin-top: 10px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+}
+
+.btn {
+  margin-top: 30px;
+  padding: 15px 50px;
+  border: none;
+  border-radius: 5px;
+  color: black;
+  background-color: white;
+  cursor: pointer;
+  transition: all 500ms;
+}
+
+.btn:hover {
+  /* background-color: #0056b3; */
+  background-color: black;
+  color: white;
+}
+
+/* hamiltonInfo */
+
+#hamiltonInfo {
+  display: none;
+}
+
+#info {
+  animation: fadeInAnimation ease 2s;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
+}
+@keyframes fadeInAnimation {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+/* questions section */
+
+#questions {
+  display: none;
+}
+
+.question-container {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+
+input[type='radio'] {
+  display: none;
+}
+
+.questionLable {
+  display: inline-block;
+  padding: 10px 20px;
+  margin: 10px;
+  border: 2px solid white;
+  border-radius: 4px;
+}
+
+input[type='radio']:checked + label {
+  background-color: #ddd;
+  color: black;
+}
+
+#questionForm {
+  margin-top: 30px;
+}
+
+.questionBtn {
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+#arrows {
+  display: flex;
+  justify-content: space-around;
+  width: 100vw;
+}
+
+#arrow {
+  width: 60px;
+  /* position: fixed; */
+  /* top: 40px; */
+}
+#leftarrow {
+  width: 60px;
+}
+
+/* #welcome,
+#profile {
+  display: none;
+}
+#questions {
+  display: block;
+} */
+
+/* score page */
+#scorepage {
+  display: none;
+  text-align: center;
+  font-size: 25px;
+}
+
+#result {
+  position: fixed;
+  top: 40px;
+  width: 100vw;
+}
+
+#score {
+  position: fixed;
+  top: 300px;
+  width: 100vw;
+}
+
+#message {
+  position: fixed;
+  top: 350px;
+  width: 100vw;
+}
