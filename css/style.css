@@ -106,6 +106,7 @@ input {
 }
 
 #info {
+  text-align: center;
   animation: fadeInAnimation ease 2s;
   animation-iteration-count: 1;
   animation-fill-mode: forwards;

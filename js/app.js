@@ -117,13 +117,13 @@ function updateScore() {
   const score = document.getElementById('score');
   score.textContent = `SCORE: ${hamiltonScore}`;
   let depressionMessage;
-  if (0 <= hamiltonInfo <= 7) {
+  if (0 <= hamiltonScore && hamiltonScore <= 7) {
     depressionMessage = 'YOU ARE NORMAL';
-  } else if (8 <= hamiltonScore <= 13) {
+  } else if (8 <= hamiltonScore && hamiltonScore <= 13) {
     depressionMessage = 'YOU HAVE MILD DEPRESSION';
-  } else if (14 <= hamiltonScore <= 18) {
+  } else if (14 <= hamiltonScore && hamiltonScore <= 18) {
     depressionMessage = 'YOU HAVE MODERATE DEPRESSION';
-  } else if (19 <= hamiltonInfo <= 22) {
+  } else if (19 <= hamiltonScore && hamiltonScore <= 22) {
     depressionMessage = 'SEVERE DEPRESSION';
   } else {
     depressionMessage = 'VERY SEVERE DEPRESSION';
