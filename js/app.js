@@ -17,7 +17,7 @@ const nextArrow = document.getElementById('leftarrow');
 const questions = document.getElementById('questions');
 let hamiltonScore = 0;
 let montScore = 0;
-let tempHamiltonScore = 0;
+let tempHamiltonScore = -1;
 const scorePage = document.getElementById('scorepage');
 const message = document.getElementById('message');
 const nextLevel = document.getElementById('nextlevel');
@@ -94,11 +94,12 @@ function loadQuestionDynamically(dynamicQuestions) {
   }
 
   if (currentQuestionSet.hamilton) {
+    console.log(tempHamiltonScore);
     hamiltonScore += tempHamiltonScore;
   } else if (currentQuestionSet.mont) {
     montScore += tempHamiltonScore;
   }
-  tempHamiltonScore = 0;
+  tempHamiltonScore = -1;
 }
 
 // score page
@@ -106,6 +107,7 @@ function updateScore() {
   questions.style.display = 'none';
   scorePage.style.display = 'block';
   const score = document.getElementById('score');
+  console.log(`hamilton score:${hamiltonScore}`);
   if (currentQuestionSet.hamilton) {
     score.textContent = `SCORE: ${hamiltonScore}`;
   } else if (currentQuestionSet.mont) {
@@ -145,7 +147,6 @@ function updateScore() {
   }
   message.textContent = depressionMessage;
   nextLevel.addEventListener('click', (e) => {
-    console.log(currentQuestionSet);
     if (currentQuestionSet.hamilton) {
       dynamicInfo(['fuck'], questionList);
     } else if (currentQuestionSet.mont) {
@@ -228,26 +229,30 @@ profileForm.addEventListener('submit', (e) => {
 
 // question navigation by arrow click
 nextArrow.addEventListener('click', (e) => {
-  let currentList = [];
-  if (currentQuestionSet.hamilton) {
-    currentList = questionList;
-  } else if (currentQuestionSet.mont) {
-    currentList = montList;
-  }
-  if (questionCount + 1 < currentList.length) {
-    questionCount++;
-    loadQuestionDynamically(currentList);
-  } else {
-    questionCount = -1;
-    // loadQuestionDynamically();
+  if (tempHamiltonScore > -1) {
+    let currentList = [];
     if (currentQuestionSet.hamilton) {
-      currentQuestionSet.hamilton = false;
-      currentQuestionSet.mont = true;
-      updateScore();
+      currentList = questionList;
     } else if (currentQuestionSet.mont) {
-      currentQuestionSet.mont = false;
-      updateScore();
+      currentList = montList;
     }
+    if (questionCount + 1 < currentList.length) {
+      questionCount++;
+      loadQuestionDynamically(currentList);
+    } else {
+      questionCount = -1;
+      // loadQuestionDynamically();
+      if (currentQuestionSet.hamilton) {
+        updateScore();
+        currentQuestionSet.hamilton = false;
+        currentQuestionSet.mont = true;
+      } else if (currentQuestionSet.mont) {
+        updateScore();
+        currentQuestionSet.mont = false;
+      }
+    }
+  } else {
+    window.alert('Please Select an option');
   }
   e.preventDefault();
 });
