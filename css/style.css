@@ -209,3 +209,9 @@ input[type='radio']:checked + label {
   top: 350px;
   width: 100vw;
 }
+
+#nextlevel {
+  position: fixed;
+  bottom: 80px;
+  /* width: 100vw; */
+}
