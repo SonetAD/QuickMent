@@ -254,7 +254,43 @@ input[type='radio']:checked + label {
 
 #usrRes {
   position: fixed;
-  top: 50vh;
+  top: 30vh;
   left: 15vw;
   /* text-align: center; */
+}
+
+#sliceVal {
+  position: fixed;
+  top: 30vh;
+  right: 15vw;
+}
+
+#normal {
+  color: black;
+  background-color: white;
+  padding: 15px;
+}
+
+#mild {
+  background-color: green;
+  color: white;
+  padding: 15px;
+}
+
+#moderate {
+  background-color: blue;
+  color: white;
+  padding: 15px;
+}
+
+#severe {
+  background-color: yellow;
+  color: black;
+  padding: 15px;
+}
+
+#verySevere {
+  color: white;
+  background-color: red;
+  padding: 15px;
 }

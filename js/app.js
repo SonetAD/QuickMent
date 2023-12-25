@@ -67,7 +67,6 @@ function dynamicInfo(messages, dynamicQuestion) {
         checkIfBtn = false;
         hamiltonInfo.style.display = 'none';
         questions.style.display = 'block';
-        console.log(dynamicQuestion);
         questionCount++;
         loadQuestionDynamically(dynamicQuestion, 'next');
         e.preventDefault();
@@ -109,7 +108,6 @@ function loadQuestionDynamically(dynamicQuestions, trackMove) {
   }
 
   if (currentQuestionSet.hamilton) {
-    console.log(tempHamiltonScore);
     if (trackMove === 'next') {
       tempMoveTrack = tempHamiltonScore;
       if (tempHamiltonScore >= 0) {
@@ -215,10 +213,20 @@ function updateScore() {
       dynamicInfo(['No Message'], questionList);
     } else if (currentQuestionSet.mont) {
       // questionCount++;
-      dynamicInfo(['kka'], montList);
+      const messageInfo = [
+        "Hey,Let's make it more precise",
+        'Lets measure it with Montgomery and Åsberg (MADRS) Depression Rating Scale. ',
+        "Let's GO!",
+      ];
+      dynamicInfo(messageInfo, montList);
     } else if (currentQuestionSet.qids) {
       // questionCount--;
-      dynamicInfo(['mama'], qidsList);
+      const messageInfo = [
+        'ets make it crystal clear, lets make it more precise',
+        'lets measure it once again with QUICK INVENTORY OF DEPRESSIVE SYMPTOMATOLOGY (QIDS)',
+        "Let's Do It!",
+      ];
+      dynamicInfo(messageInfo, qidsList);
     } else {
       writeData(
         profileInfo.name,
@@ -231,7 +239,7 @@ function updateScore() {
       );
 
       scorePage.style.display = 'none';
-      chart.style.display = 'flex';
+      chart.style.display = 'grid';
 
       readData().then((userData) => {
         const totalUser = userData.data.length;
@@ -255,7 +263,7 @@ function updateScore() {
           }
         });
 
-        const colors = ['red', 'green', 'blue', 'yellow', 'purple']; // Colors
+        const colors = ['white', 'green', 'blue', 'yellow', 'red'];
         const finalData = [
           (normal / totalUser) * 100,
           (mild / totalUser) * 100,
@@ -265,6 +273,40 @@ function updateScore() {
         ];
 
         drawPieChart(finalData, colors);
+        const totalParticipant = document.getElementById('totalUsr');
+        totalParticipant.textContent = `Total Participants: ${totalUser}:`;
+        const hdrs = document.getElementById('hdrs');
+        hdrs.textContent = `HDRS: ${hamiltonScore}`;
+        const madrs = document.getElementById('madrs');
+        madrs.textContent = `MADRS: ${montScore}`;
+        const qids = document.getElementById('qids');
+        qids.textContent = `QIDS: ${qidsScore}`;
+
+        const normalScore = document.getElementById('normal');
+        normalScore.textContent = `NORMAL: ${Math.trunc(
+          (normal / totalUser) * 100
+        )}%`;
+
+        const mildScore = document.getElementById('mild');
+        mildScore.textContent = `MILD: ${Math.trunc(
+          (mild / totalUser) * 100
+        )}%`;
+
+        const moderateScore = document.getElementById('moderate');
+        moderateScore.textContent = `MODERATE: ${Math.trunc(
+          (moderate / totalUser) * 100
+        )}%`;
+
+        const severeScore = document.getElementById('severe');
+        severeScore.textContent = `SEVERE: ${Math.trunc(
+          (severe / totalUser) * 100
+        )}%`;
+
+        const verySevereScore = document.getElementById('verySevere');
+
+        verySevereScore.textContent = `VERY SEVERE: ${Math.trunc(
+          (verySevere / totalUser) * 100
+        )}%`;
       });
     }
 
@@ -418,5 +460,3 @@ function drawSlice(ctx, centerX, centerY, radius, startAngle, endAngle, color) {
   ctx.closePath();
   ctx.fill();
 }
-
-drawPieChart([25, 25, 4, 25, 25], ['red', 'black', 'blue', 'pink', 'green']);
