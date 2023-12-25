@@ -214,15 +214,15 @@ function updateScore() {
     } else if (currentQuestionSet.mont) {
       // questionCount++;
       const messageInfo = [
-        "Hey,Let's make it more precise",
-        'Lets measure it with Montgomery and Åsberg (MADRS) Depression Rating Scale. ',
-        "Let's GO!",
+        "Hey, Let's make it more precise",
+        'Lets measure it with Montgomery and Åsberg Depression Rating Scale. ',
+        "Let's Go!",
       ];
       dynamicInfo(messageInfo, montList);
     } else if (currentQuestionSet.qids) {
       // questionCount--;
       const messageInfo = [
-        'ets make it crystal clear, lets make it more precise',
+        'Lets make it crystal clear, lets make it more precise',
         'lets measure it once again with QUICK INVENTORY OF DEPRESSIVE SYMPTOMATOLOGY (QIDS)',
         "Let's Do It!",
       ];
@@ -333,9 +333,9 @@ profileForm.addEventListener('submit', (e) => {
     // hamilton info page
 
     const messages = [
-      `Hi ${name.value},how are you doing?`,
+      `Hi ${name.value}, how are you doing?`,
       'Are you depressed today?',
-      'I can mesure your Psychological Condition with Hamilton Rating Sca.',
+      'I can mesure your Psychological Condition with Hamilton Rating Scale.',
       'Are you Ready?',
     ];
     dynamicInfo(messages, questionList);
