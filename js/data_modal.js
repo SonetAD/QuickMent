@@ -154,3 +154,5 @@ const questionList = [
     },
   ],
 ];
+
+export default questionList;

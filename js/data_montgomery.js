@@ -90,3 +90,5 @@ const montList = [
     },
   ],
 ];
+
+export default montList;
