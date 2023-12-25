@@ -36,6 +36,8 @@ const currentQuestionSet = {
 let tempMoveTrack = 0;
 const chart = document.getElementById('chart');
 
+let checkIfBtn = false;
+
 // global functions
 
 function dynamicInfo(messages, dynamicQuestion) {
@@ -53,11 +55,16 @@ function dynamicInfo(messages, dynamicQuestion) {
       btn.textContent = 'START';
       btn.setAttribute('class', 'btn');
       btn.setAttribute('id', 'startBtn');
-      hamiltonInfo.appendChild(btn);
+      if (!checkIfBtn) {
+        hamiltonInfo.appendChild(btn);
+        checkIfBtn = true;
+      }
 
       const startBtn = document.getElementById('startBtn');
+      // startBtn.style.display = 'none';
 
       startBtn.addEventListener('click', (e) => {
+        checkIfBtn = false;
         hamiltonInfo.style.display = 'none';
         questions.style.display = 'block';
         console.log(dynamicQuestion);
@@ -411,3 +418,5 @@ function drawSlice(ctx, centerX, centerY, radius, startAngle, endAngle, color) {
   ctx.closePath();
   ctx.fill();
 }
+
+drawPieChart([25, 25, 4, 25, 25], ['red', 'black', 'blue', 'pink', 'green']);

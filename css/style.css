@@ -5,10 +5,12 @@
 }
 
 body {
-  width: 100vw;
-  height: 100vh;
   color: white;
-  background-image: linear-gradient(to top, #30cfd0 0%, #330867 100%);
+  background-image: url('../assets/globalBg.jpg');
+  background-repeat: no-repeate;
+  background-size: cover;
+  width: 100%;
+  height: 100vh;
 }
 
 /* welcome page design */
@@ -20,6 +22,20 @@ body {
   height: 100%;
   justify-content: center;
   align-items: center;
+}
+
+#welcome {
+  background-image: url('../assets/bgimg.jpg');
+  background-repeat: no-repeate;
+  background-size: cover;
+  width: 100%;
+  height: 100vh;
+}
+
+#welcomeBtn {
+  position: fixed;
+  text-align: center;
+  bottom: 10vh;
 }
 
 /* profile design */
@@ -219,6 +235,26 @@ input[type='radio']:checked + label {
 #chart {
   height: 100%;
   display: none;
-  justify-content: center;
+  justify-content: space-around;
   align-items: center;
+}
+
+/* #welcome,
+#profile,
+#questions {
+  display: none;
+} */
+
+#totalUsr {
+  position: fixed;
+  bottom: 10vh;
+  text-align: center;
+  width: 100%;
+}
+
+#usrRes {
+  position: fixed;
+  top: 50vh;
+  left: 15vw;
+  /* text-align: center; */
 }
