@@ -78,7 +78,8 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE.txt) 
 
 ## Special Thanks
 
-Nuhu Ibne Shahid - Thanks for your amazing designs.Without you,the project would be impossible.
+Special thanks to Nuhu Ibne Shahid for his exceptional contributions as a graphics designer, handling all visual and design work, including color and design decisions for the QuickMent project.
+
 ---
 
 We hope QuickMent provides invaluable insights into your mental health. Thank you for utilizing our app!
