@@ -41,7 +41,7 @@ To deploy QuickMent locally, follow these instructions:
 1. **Clone the repository**:
 
    ```bash
-   git clone https://github.com/yourusername/quickment.git
+   git clone git@github.com:SonetAD/QuickMent.git 
    cd quickment
    ```
 
@@ -75,6 +75,9 @@ Contributions are encouraged! Please fork the repository and submit a pull reque
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
+
+## Special Thanks
+ Nuhu Ibne Shahid - Thanks for your amazing designs.Without you,the project would be impossible.
 ---
 
 We hope QuickMent provides invaluable insights into your mental health. Thank you for utilizing our app!
