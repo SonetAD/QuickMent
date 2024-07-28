@@ -73,11 +73,12 @@ Contributions are encouraged! Please fork the repository and submit a pull reque
 
 ## 📄 License
 
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+This project is licensed under the MIT License - see the [LICENSE](LICENSE.txt) file for details.
 
 
 ## Special Thanks
- Nuhu Ibne Shahid - Thanks for your amazing designs.Without you,the project would be impossible.
+
+Nuhu Ibne Shahid - Thanks for your amazing designs.Without you,the project would be impossible.
 ---
 
 We hope QuickMent provides invaluable insights into your mental health. Thank you for utilizing our app!
